@@ -1,4 +1,4 @@
-package athleticgis;
+package com.athleticgis;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -8,7 +8,6 @@ import java.io.Serializable;
 @SessionScoped
 public class UserInfoBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 	private String name;
 	private String password;
 	private Boolean rememberMe;
