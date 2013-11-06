@@ -8,22 +8,34 @@
 	xmlns:a4j="http://richfaces.org/a4j">
 
 <h:head>
-	<title>JSF 2.0 Hello World</title>
+	<title>Login Page</title>
+	<h:outputStylesheet library="css" name="meallen.style.css" />
 </h:head>
-<h:body>
-	<h:form>
 
-		<rich:panel>
+<h:panelGrid width="20%" columns="1" styleClass="logincentered">
+	<rich:panel>
+		<f:facet name="header">
+			<h:outputText value="Login" />
+		</f:facet>
+		<h:form>
 
-			<f:facet name="header">
-
-				<h:outputText value="Login" />
-			</f:facet>
-			<h:inputText value="#{helloBean.name}"></h:inputText>
-			<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
-
-
-		</rich:panel>
-	</h:form>
-</h:body>
+			<h:outputLabel value="Username: " for="username" />
+			<h:inputText id="username" value="#{userInfoBean.name}" />
+			<br />
+			<br />
+			<h:outputLabel value="Password: " for="password" />
+			<h:inputSecret id="password" value="#{userInfoBean.password}" />
+			<br />
+			<br />
+			<h:panelGrid styleClass="panelGridCenter" columns="1">
+				<h:outputLabel for="rememberMe">
+					<h:selectBooleanCheckbox value="#{userInfoBean.rememberMe}"
+						id="rememberMe" /> Remember Me
+				</h:outputLabel>
+				<br />
+				<h:commandButton value="Sign In" action="dashboard"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+	</rich:panel>
+</h:panelGrid>
 </html>

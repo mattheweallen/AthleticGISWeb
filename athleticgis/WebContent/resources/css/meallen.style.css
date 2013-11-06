@@ -1,0 +1,12 @@
+.logincentered {
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -100px;
+}
+
+.panelGridCenter {
+	text-align: center;
+	margin: 0 auto;
+}
