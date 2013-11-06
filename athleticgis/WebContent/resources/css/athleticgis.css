@@ -1,0 +1,38 @@
+.logoFont {
+	font-family:"Lucida Console", Monaco, monospace;
+	font-style:italic;
+	font-size:1.875em;	
+}
+
+.userFont {
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:1em;	
+}
+
+.header {
+	height:67px;
+	width:100%;
+	background-color:#b0e0e6;
+}
+
+.footer {
+	height:23px;
+	width:100%;
+	background-color:#b0e0e6;
+}
+
+.loginPanel {
+	height:300px;
+	width:100%
+}
+
+.loginForm {
+	margin-left:auto;
+	margin-right:auto;
+	width:20%;
+}
+
+.panelGridCenter {
+	text-align: center;
+	margin: 0 auto;
+}
