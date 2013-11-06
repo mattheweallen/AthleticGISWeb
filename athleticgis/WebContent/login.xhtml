@@ -9,7 +9,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<title>Login Page</title>
+	<title>Login</title>
 </h:head>
 
 <ui:composition template="/template/layout.xhtml">
@@ -33,7 +33,7 @@
 						<h:outputLabel for="rememberMe">
 							<h:selectBooleanCheckbox value="#{userInfoBean.rememberMe}"
 								id="rememberMe" /> Remember Me
-				</h:outputLabel>
+						</h:outputLabel>
 						<br />
 						<h:commandButton value="Sign In" action="dashboard"></h:commandButton>
 					</h:panelGrid>
