@@ -14,23 +14,14 @@
 
 <ui:composition template="/template/layout.xhtml">
 	<ui:define name="content">
-		<h:panelGrid width="80%" columns="1">
+		<h:form>
 			<rich:panel>
 				<f:facet name="header">
-					<h:outputText value="Activity Upload" />
+					<h:outputText value="Upload Files" />
 				</f:facet>
-				<h:form>
-
-					<h:outputLabel value="Activity Name: " for="activityName" />
-					<h:inputText id="activityName" value="#{dashboardBean.activityName}" />
-					<br />
-					<br />
-					<rich:fileUpload id="fileToUpload"></rich:fileUpload>
-					<br />
-					<br />
-				</h:form>
+				<rich:fileUpload id="fileToUpload" styleClass="uploadForm"></rich:fileUpload>
 			</rich:panel>
-		</h:panelGrid>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>
