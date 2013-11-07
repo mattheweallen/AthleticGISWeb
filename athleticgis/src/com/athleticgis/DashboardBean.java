@@ -2,18 +2,22 @@ package com.athleticgis;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+import com.athleticgis.model.Activity;
+
 import java.io.Serializable;
+import java.util.List;
  
 @ManagedBean
 @SessionScoped
 public class DashboardBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String activityName;
+	private List<Activity> activities;
 	
-	public String getActivityName() {
-		return activityName;
+	public List<Activity> getActivities() {
+		return activities;
 	}
-	public void setActivityName(String activityName) {
-		this.activityName = activityName;
+	public void setActivityName(List<Activity> activities) {
+		this.activities = activities;
 	}
 }

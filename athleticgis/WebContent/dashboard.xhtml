@@ -17,16 +17,37 @@
 		<h:form>
 			<rich:tabPanel>
 				<rich:tab header="Activities">
-					<h:outputLabel value="1 tab"></h:outputLabel>
+					<rich:dataTable value="#{dashboardBean.activities}" var="activity" rows="0" styleClass="activitiesTable">
+						<f:facet name="caption">
+							<h:outputText value="Activities" />
+						</f:facet>
+
+						<f:facet name="header">
+							<h:outputText value="Activity Table" />
+						</f:facet>
+
+						<rich:column width="80%">
+							<f:facet name="header">Name</f:facet>
+							<h:commandLink value="#{activity.name}"></h:commandLink>
+							<f:facet name="footer">Name</f:facet>
+						</rich:column>
+
+						<rich:column width="20%">
+							<f:facet name="header">Date</f:facet>
+							<h:outputText value="#{activity.date}" />
+							<f:facet name="footer">Date</f:facet>
+						</rich:column>
+
+						<f:facet name="footer">
+							<h:outputText value="Activity Table" />
+						</f:facet>
+					</rich:dataTable>
 				</rich:tab>
-			
+
 				<rich:tab header="Upload">
 					<rich:fileUpload id="fileToUpload" styleClass="uploadForm"></rich:fileUpload>
 				</rich:tab>
-			
-				<rich:tab header="Update">
-					<h:outputLabel value="3 tab"></h:outputLabel>
-				</rich:tab>
+
 			</rich:tabPanel>
 
 		</h:form>
