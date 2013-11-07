@@ -1,6 +1,5 @@
 .logoFont {
-	font-family:"Lucida Console", Monaco, monospace;
-	font-style:italic;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size:1.875em;	
 }
 
@@ -47,4 +46,9 @@
 .panelGridCenter {
 	text-align: center;
 	margin: 0 auto;
+}
+
+.mapPanel {
+	height:400px;
+	width:70%
 }
