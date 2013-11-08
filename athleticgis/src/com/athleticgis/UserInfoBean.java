@@ -11,6 +11,21 @@ public class UserInfoBean implements Serializable {
 	private String name;
 	private String password;
 	private Boolean rememberMe;
+	private Boolean isAdmin;
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	public Boolean getIsGeneral() {
+		return isGeneral;
+	}
+	public void setIsGeneral(Boolean isGeneral) {
+		this.isGeneral = isGeneral;
+	}
+	private Boolean isGeneral;
 	
 	public String getName() {
 		return name;
