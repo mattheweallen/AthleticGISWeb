@@ -15,40 +15,41 @@
 <ui:composition template="/template/layout.xhtml">
 	<ui:define name="content">
 		<h:form>
-			<rich:tabPanel>
-				<rich:tab header="Activities">
-					<rich:dataTable value="#{dashboardBean.activities}" var="activity" rows="0" styleClass="activitiesTable">
-						<f:facet name="caption">
-							<h:outputText value="Activities" />
-						</f:facet>
+			<rich:panel>
+				<f:facet name="header">
+					<h:panelGrid border="0" columns="2" width="100%" columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">
+						<h:outputText value="Activities" />
+						<h:commandButton action="upload" value="Upload Activity"></h:commandButton>
+					</h:panelGrid>
+				</f:facet>
+				<rich:dataTable value="#{dashboardBean.activities}" var="activity"
+					rows="0" styleClass="activitiesTable">
+					<f:facet name="caption">
+						<h:outputText value="Activities" />
+					</f:facet>
 
-						<f:facet name="header">
-							<h:outputText value="Activity Table" />
-						</f:facet>
+					<f:facet name="header">
+						<h:outputText value="Activity Table" />
+					</f:facet>
 
-						<rich:column width="80%">
-							<f:facet name="header">Name</f:facet>
-							<h:commandLink value="#{activity.name}" action="activity?faces-redirect=true"></h:commandLink>
-							<f:facet name="footer">Name</f:facet>
-						</rich:column>
+					<rich:column width="80%">
+						<f:facet name="header">Name</f:facet>
+						<h:commandLink value="#{activity.name}"
+							action="activity?faces-redirect=true"></h:commandLink>
+						<f:facet name="footer">Name</f:facet>
+					</rich:column>
 
-						<rich:column width="20%">
-							<f:facet name="header">Date</f:facet>
-							<h:outputText value="#{activity.date}" />
-							<f:facet name="footer">Date</f:facet>
-						</rich:column>
+					<rich:column width="20%">
+						<f:facet name="header">Date</f:facet>
+						<h:outputText value="#{activity.date}" />
+						<f:facet name="footer">Date</f:facet>
+					</rich:column>
 
-						<f:facet name="footer">
-							<h:outputText value="Activity Table" />
-						</f:facet>
-					</rich:dataTable>
-				</rich:tab>
-
-				<rich:tab header="Upload">
-					<rich:fileUpload id="fileToUpload" styleClass="uploadForm" fileUploadListener="#{dashboardBean.fileUploadListener}"></rich:fileUpload>
-				</rich:tab>
-
-			</rich:tabPanel>
+					<f:facet name="footer">
+						<h:outputText value="Activity Table" />
+					</f:facet>
+				</rich:dataTable>
+			</rich:panel>
 
 		</h:form>
 	</ui:define>

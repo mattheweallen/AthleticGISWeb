@@ -31,15 +31,15 @@ public class DashboardBean implements Serializable {
 		return activities;
 	}
 	
-	public void fileUploadListener(FileUploadEvent event) throws Exception {
-		UploadedFile item = event.getUploadedFile();
+//	public void fileUploadListener(FileUploadEvent event) throws Exception {
+//		UploadedFile item = event.getUploadedFile();
 //	    File file = new File();
 //	    file.setLength(item.getData().length);
 //	    file.setName(item.getName());
 //	    file.setData(item.getData());
 //	    files.add(file);
 //	    uploadsAvailable--;
-	}
+//	}
 //	public void setActivityName(List<Activity> activities) {
 //		this.activities = activities;
 //	}

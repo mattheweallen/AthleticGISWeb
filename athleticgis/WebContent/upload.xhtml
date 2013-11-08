@@ -14,13 +14,29 @@
 
 <ui:composition template="/template/layout.xhtml">
 	<ui:define name="content">
-		<h:form>
+		<h:form enctype="multipart/form-data">
+
 			<rich:panel>
 				<f:facet name="header">
-					<h:outputText value="Upload Files" />
+					<h:panelGrid columns="2" width="100%" columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">
+						<h:outputText value="Upload File" />
+						<h:commandButton action="dashboard" value="Return to Dashboard"></h:commandButton>
+					</h:panelGrid>
 				</f:facet>
-				<rich:fileUpload id="fileToUpload" styleClass="uploadForm"></rich:fileUpload>
+				<h:panelGrid styleClass="uploadForm">
+					<!-- Put Input Text for Title of Activity -->
+					<h:panelGrid columns="2">
+						<h:inputFile id="file" value="#{uploadBean.file}"
+							validator="#{uploadBean.validateFile}" />
+						<h:commandButton value="Upload"
+							actionListener="#{uploadBean.upload}">
+						</h:commandButton>
+					</h:panelGrid>
+					<h:inputTextarea rows="20" cols="150"
+						value="#{uploadBean.fileContent}" readonly="true" />
+				</h:panelGrid>
 			</rich:panel>
+
 		</h:form>
 	</ui:define>
 </ui:composition>
