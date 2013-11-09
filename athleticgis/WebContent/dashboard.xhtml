@@ -32,7 +32,13 @@
 						<h:outputText value="Activity Table" />
 					</f:facet>
 
-					<rich:column width="80%">
+					<rich:column width="20%" rendered="#{userInfoBean.admin}">
+						<f:facet name="header">Date</f:facet>
+						<h:outputText value="#{activity.userName}" />
+						<f:facet name="footer">Date</f:facet>
+					</rich:column>
+
+					<rich:column width="60%">
 						<f:facet name="header">Name</f:facet>
 						<h:commandLink value="#{activity.name}"
 							action="activity?faces-redirect=true"></h:commandLink>

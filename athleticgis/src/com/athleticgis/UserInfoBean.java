@@ -11,13 +11,17 @@ public class UserInfoBean implements Serializable {
 	private String name;
 	private String password;
 	private Boolean rememberMe;
-	private Boolean isAdmin;
+	private Boolean admin;
+	private Boolean isGeneral;
 	
-	public Boolean getIsAdmin() {
-		return isAdmin;
+	public Boolean getAdmin() {
+		//return isAdmin;
+		
+		//hardcoded
+		return "admin".equals(name);
 	}
-	public void setIsAdmin(Boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	public void setAdmin(Boolean admin) {
+		this.admin = admin;
 	}
 	public Boolean getIsGeneral() {
 		return isGeneral;
@@ -25,7 +29,7 @@ public class UserInfoBean implements Serializable {
 	public void setIsGeneral(Boolean isGeneral) {
 		this.isGeneral = isGeneral;
 	}
-	private Boolean isGeneral;
+	
 	
 	public String getName() {
 		return name;

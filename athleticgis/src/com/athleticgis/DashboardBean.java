@@ -1,6 +1,7 @@
 package com.athleticgis;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import com.athleticgis.model.Activity;
@@ -21,13 +22,35 @@ public class DashboardBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<Activity> activities;
 	
+	@ManagedProperty(value = "#{userInfoBean}")
+    private UserInfoBean userInfoBean;
+	
+	public UserInfoBean getUserInfoBean() {
+		return userInfoBean;
+	}
+
+	public void setUserInfoBean(UserInfoBean userInfoBean) {
+		this.userInfoBean = userInfoBean;
+	}
+
 	public List<Activity> getActivities() {
 		//hard coded
 		activities = new ArrayList<Activity>();
-		Activity a = new Activity();
-		a.setDate(new Timestamp((new Date()).getTime()));
-		a.setName("Tuesday Night World Championships");
-		activities.add(a);
+		
+		if(userInfoBean.getAdmin()) {
+			Activity a = new Activity();
+			a.setDate(new Timestamp((new Date()).getTime()));
+			a.setName("Tuesday Night World Championships");
+			a.setUserName("admin");
+			activities.add(a);
+		}
+		
+		Activity a1 = new Activity();
+		a1.setDate(new Timestamp((new Date()).getTime()));
+		a1.setName("Run Around The Park");
+		a1.setUserName("cs402@uwlax.uwl");
+		
+		activities.add(a1);
 		return activities;
 	}
 	
