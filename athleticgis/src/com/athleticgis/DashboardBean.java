@@ -42,6 +42,7 @@ public class DashboardBean implements Serializable {
 			a.setDate(new Timestamp((new Date()).getTime()));
 			a.setName("Tuesday Night World Championships");
 			a.setUserName("admin");
+			a.setActivityId(1L);
 			activities.add(a);
 		}
 		
@@ -49,7 +50,7 @@ public class DashboardBean implements Serializable {
 		a1.setDate(new Timestamp((new Date()).getTime()));
 		a1.setName("Run Around The Park");
 		a1.setUserName("cs402@uwlax.uwl");
-		
+		a1.setActivityId(2L);
 		activities.add(a1);
 		return activities;
 	}

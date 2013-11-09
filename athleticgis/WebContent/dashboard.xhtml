@@ -40,8 +40,9 @@
 
 					<rich:column width="60%">
 						<f:facet name="header">Name</f:facet>
-						<h:commandLink value="#{activity.name}"
-							action="activity?faces-redirect=true"></h:commandLink>
+							<h:link outcome="activity" value="#{activity.name}">
+								<f:param name="activityId" value="#{activity.activityId}" />
+							</h:link>
 						<f:facet name="footer">Name</f:facet>
 					</rich:column>
 
