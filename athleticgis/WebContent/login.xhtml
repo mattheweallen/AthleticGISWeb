@@ -20,22 +20,24 @@
 					<h:outputText value="Login" />
 				</f:facet>
 				<h:form>
-
-					<h:outputLabel value="Username: " for="username" />
-					<h:inputText id="username" value="#{userInfoBean.name}" />
-					<br />
-					<br />
-					<h:outputLabel value="Password: " for="password" />
-					<h:inputSecret id="password" value="#{userInfoBean.password}" />
-					<br />
-					<br />
-					<h:panelGrid styleClass="panelGridCenter" columns="1">
-						<h:outputLabel for="rememberMe">
-							<h:selectBooleanCheckbox value="#{userInfoBean.rememberMe}"
-								id="rememberMe" /> Remember Me
-						</h:outputLabel>
-						<br />
-						<h:commandButton value="Sign In" action="dashboard?faces-redirect=true"></h:commandButton>
+					<h:panelGrid styleClass="panelGridCenter">
+						<h:panelGrid columns="2" styleClass="panelGridLeft">
+							<h:outputLabel value="Username: " for="username" />
+							<h:inputText id="username" value="#{userInfoBean.name}" />
+							
+							<h:outputLabel value="Password: " for="password" />
+							<h:inputSecret id="password" value="#{userInfoBean.password}" />
+						</h:panelGrid>
+						
+						<h:panelGrid styleClass="panelGridCenter" columns="1">
+							<h:outputLabel for="rememberMe">
+								<h:selectBooleanCheckbox value="#{userInfoBean.rememberMe}"
+									id="rememberMe" /> Remember Me
+							</h:outputLabel>
+							<br />
+							<h:commandButton value="Sign In"
+								action="dashboard?faces-redirect=true"></h:commandButton>
+						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
 			</rich:panel>

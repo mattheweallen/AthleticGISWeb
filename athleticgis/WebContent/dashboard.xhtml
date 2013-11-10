@@ -33,12 +33,12 @@
 					</f:facet>
 
 					<rich:column width="20%" rendered="#{userInfoBean.admin}">
-						<f:facet name="header">Date</f:facet>
+						<f:facet name="header">User Name</f:facet>
 						<h:outputText value="#{activity.userName}" />
-						<f:facet name="footer">Date</f:facet>
+						<f:facet name="footer">User Name</f:facet>
 					</rich:column>
 
-					<rich:column width="60%">
+					<rich:column width="40%">
 						<f:facet name="header">Name</f:facet>
 							<h:link outcome="activity" value="#{activity.name}">
 								<f:param name="activityId" value="#{activity.activityId}" />
@@ -50,6 +50,14 @@
 						<f:facet name="header">Date</f:facet>
 						<h:outputText value="#{activity.date}" />
 						<f:facet name="footer">Date</f:facet>
+					</rich:column>
+					
+					<rich:column width="20%">
+						<f:facet name="header">Delete</f:facet>
+							<h:commandLink value="Delete">
+								<f:param name="activityId" value="#{activity.activityId}" />
+							</h:commandLink>
+						<f:facet name="footer">Delete</f:facet>
 					</rich:column>
 
 					<f:facet name="footer">
