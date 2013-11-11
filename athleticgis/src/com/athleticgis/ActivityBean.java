@@ -39,7 +39,7 @@ public class ActivityBean implements Serializable {
 
 		Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		//String activityId = params.get("activityId");
-		System.out.println(activityId);
+		//System.out.println(activityId);
 		return "Tuesday Night World Championships";
 
 	}
