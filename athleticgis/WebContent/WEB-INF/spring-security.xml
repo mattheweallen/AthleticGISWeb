@@ -23,6 +23,8 @@
 			login-page="/login.xhtml" default-target-url="/dashboard.xhtml"
 			authentication-failure-url="/login.xhtml?error=t" />
 		<!-- <logout logout-url="/logout" logout-success-url="/" />  -->
+		
+		<remember-me key="myAppKey"/>
 	</http>
 
 	<authentication-manager>
