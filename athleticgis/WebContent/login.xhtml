@@ -19,24 +19,23 @@
 				<f:facet name="header">
 					<h:outputText value="Login" />
 				</f:facet>
-				<h:form>
+				<h:form id="loginForm" prependId="false">
 					<h:panelGrid styleClass="panelGridCenter">
 						<h:panelGrid columns="2" styleClass="panelGridLeft">
-							<h:outputLabel value="Username: " for="username" />
-							<h:inputText id="username" value="#{userInfoBean.name}" />
+							<h:outputLabel value="Username: " for="j_username" />
+							<h:inputText id="j_username" required="true" value="#{userInfoBean.name}"/>
 							
-							<h:outputLabel value="Password: " for="password" />
-							<h:inputSecret id="password" value="#{userInfoBean.password}" />
+							<h:outputLabel value="Password: " for="j_password" />
+							<h:inputSecret id="j_password" required="true" />
 						</h:panelGrid>
 						
 						<h:panelGrid styleClass="panelGridCenter" columns="1">
-							<h:outputLabel for="rememberMe">
-								<h:selectBooleanCheckbox value="#{userInfoBean.rememberMe}"
-									id="rememberMe" /> Remember Me
+							<h:outputLabel for="_spring_security_remember_me">
+								<h:selectBooleanCheckbox id="_spring_security_remember_me" value="#{userInfoBean.rememberMe}"/> Remember Me
 							</h:outputLabel>
 							<br />
-							<h:commandButton value="Sign In"
-								action="dashboard?faces-redirect=true"></h:commandButton>
+							<h:commandButton value="Sign In" id="login" type="submit"
+								action="#{loginBean.doLogin}"></h:commandButton>
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
