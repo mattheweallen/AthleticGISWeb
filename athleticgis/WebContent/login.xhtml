@@ -7,84 +7,53 @@
 	xmlns:rich="http://richfaces.org/rich"
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-
 <h:head>
 	<title>Login</title>
 	<h:outputStylesheet>
 		.logoFont {
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size:1.875em;	
-}
-
-.userFont {
-	font-family:"Lucida Console", Monaco, monospace;
-	font-size:1em;	
-}
-
-.header {
-	height:67px;
-	width:100%;
-	background-color:#b0e0e6;
-}
-
-.footer {
-	height:23px;
-	width:100%;
-	background-color:#b0e0e6;
-}
-
-.loginPanel {
-	height:300px;
-	width:100%
-}
-
-.loginForm {
-	margin-left:auto;
-	margin-right:auto;
-	width:30%;
-}
-
-.uploadForm {
-	margin-left:auto;
-	margin-right:auto;
-	width:40%;
-}
-
-.activitiesTable {
-	margin-left:auto;
-	margin-right:auto;
-	width:70%;
-}
-
-.panelGridCenter {
-	text-align: center;
-	margin: 0 auto;
-}
-
-.panelGridLeft {
-	text-align: left;
-	margin: 0 auto;
-}
-
-.mapPanel {
-	height:400px;
-	width:70%
-}
-
-.richPanelHeaderCol1 {
-	margin: 0 auto;
-	width: 50%;
-	text-align: left;
-}
-
-.richPanelHeaderCol2 {
-	margin: 0 auto;
-	width: 50%;
-	text-align: center;
-}
+			font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+			font-size:1.875em;	
+		}
+		
+		.userFont {
+			font-family:"Lucida Console", Monaco, monospace;
+			font-size:1em;	
+		}
+		
+		.header {
+			height:67px;
+			width:100%;
+			background-color:#b0e0e6;
+		}
+		
+		.footer {
+			height:23px;
+			width:100%;
+			background-color:#b0e0e6;
+		}
+		
+		.loginPanel {
+			height:300px;
+			width:100%
+		}
+		
+		.loginForm {
+			margin-left:auto;
+			margin-right:auto;
+			width:300px;
+		}
+		
+		.panelGridCenter {
+			text-align: center;
+			margin: 0 auto;
+		}
+		
+		.panelGridLeft {
+			text-align: left;
+			margin: 0 auto;
+		}
 	</h:outputStylesheet>
 </h:head>
-
 <h:body>
 	<h:panelGrid columns="2" styleClass="header">
 		<h:outputLabel value="Athletic GIS" styleClass="logoFont"></h:outputLabel>
@@ -96,7 +65,7 @@
 				<h:outputText value="Login" />
 			</f:facet>
 			<h:form id="loginForm" prependId="false">
-				<h:panelGrid styleClass="panelGridCenter" width="35%">
+				<h:panelGrid styleClass="panelGridCenter">
 					<h:panelGrid columns="2" styleClass="panelGridLeft">
 						<h:outputLabel value="Username: " for="j_username" />
 						<h:inputText id="j_username" required="true"
