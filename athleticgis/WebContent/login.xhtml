@@ -10,37 +10,117 @@
 
 <h:head>
 	<title>Login</title>
+	<h:outputStylesheet>
+		.logoFont {
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:1.875em;	
+}
+
+.userFont {
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:1em;	
+}
+
+.header {
+	height:67px;
+	width:100%;
+	background-color:#b0e0e6;
+}
+
+.footer {
+	height:23px;
+	width:100%;
+	background-color:#b0e0e6;
+}
+
+.loginPanel {
+	height:300px;
+	width:100%
+}
+
+.loginForm {
+	margin-left:auto;
+	margin-right:auto;
+	width:30%;
+}
+
+.uploadForm {
+	margin-left:auto;
+	margin-right:auto;
+	width:40%;
+}
+
+.activitiesTable {
+	margin-left:auto;
+	margin-right:auto;
+	width:70%;
+}
+
+.panelGridCenter {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.panelGridLeft {
+	text-align: left;
+	margin: 0 auto;
+}
+
+.mapPanel {
+	height:400px;
+	width:70%
+}
+
+.richPanelHeaderCol1 {
+	margin: 0 auto;
+	width: 50%;
+	text-align: left;
+}
+
+.richPanelHeaderCol2 {
+	margin: 0 auto;
+	width: 50%;
+	text-align: center;
+}
+	</h:outputStylesheet>
 </h:head>
 
-<ui:composition template="/template/layout.xhtml">
-	<ui:define name="content">
-		<h:panelGrid styleClass="loginPanel">
-			<rich:panel styleClass="loginForm">
-				<f:facet name="header">
-					<h:outputText value="Login" />
-				</f:facet>
-				<h:form id="loginForm" prependId="false">
-					<h:panelGrid styleClass="panelGridCenter">
-						<h:panelGrid columns="2" styleClass="panelGridLeft">
-							<h:outputLabel value="Username: " for="j_username" />
-							<h:inputText id="j_username" required="true" value="#{userInfoBean.name}"/>
-							
-							<h:outputLabel value="Password: " for="j_password" />
-							<h:inputSecret id="j_password" required="true" />
-						</h:panelGrid>
-						
-						<h:panelGrid styleClass="panelGridCenter" columns="1">
-							<h:outputLabel for="_spring_security_remember_me">
-								<h:selectBooleanCheckbox id="_spring_security_remember_me" value="#{userInfoBean.rememberMe}"/> Remember Me
-							</h:outputLabel>
-							<br />
-							<h:commandButton value="Sign In" id="login" type="submit"
-								action="#{loginBean.doLogin}"></h:commandButton>
-						</h:panelGrid>
+<h:body>
+	<h:panelGrid columns="2" styleClass="header">
+		<h:outputLabel value="Athletic GIS" styleClass="logoFont"></h:outputLabel>
+		<h:outputLabel value="" styleClass="userFont"></h:outputLabel>
+	</h:panelGrid>
+	<h:panelGrid styleClass="loginPanel">
+		<rich:panel styleClass="loginForm">
+			<f:facet name="header">
+				<h:outputText value="Login" />
+			</f:facet>
+			<h:form id="loginForm" prependId="false">
+				<h:panelGrid styleClass="panelGridCenter" width="35%">
+					<h:panelGrid columns="2" styleClass="panelGridLeft">
+						<h:outputLabel value="Username: " for="j_username" />
+						<h:inputText id="j_username" required="true"
+							value="#{userInfoBean.name}" />
+
+						<h:outputLabel value="Password: " for="j_password" />
+						<h:inputSecret id="j_password" required="true" />
 					</h:panelGrid>
-				</h:form>
-			</rich:panel>
-		</h:panelGrid>
-	</ui:define>
-</ui:composition>
+
+					<h:panelGrid styleClass="panelGridCenter" columns="1">
+						<h:outputLabel for="_spring_security_remember_me">
+							<h:selectBooleanCheckbox id="_spring_security_remember_me"
+								value="#{userInfoBean.rememberMe}" /> Remember Me
+							</h:outputLabel>
+						<br />
+						<h:commandButton value="Sign In" id="login" type="submit"
+							action="#{loginBean.doLogin}"></h:commandButton>
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:form>
+		</rich:panel>
+	</h:panelGrid>
+	<div id="footer" class="footer">
+		<h:outputLabel value="&copy; 2013 Athletic GIS" />
+	</div>
+</h:body>
 </html>
