@@ -7,8 +7,14 @@
                         http://www.springframework.org/schema/security
                          http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 	
+	<http pattern="/resources/css/**" security="none"/>
+	<http pattern="/resources/js/**" security="none"/>
+	<http pattern="/resources/img/**" security="none"/>
+	
 	<global-method-security secured-annotations="enabled">
 	</global-method-security>
+	
+	
 
 	<http auto-config="true">
 
