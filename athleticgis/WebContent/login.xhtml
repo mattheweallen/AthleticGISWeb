@@ -1,50 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:rich="http://richfaces.org/rich"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
 	<title>Login</title>
-	<link href="resources/css/athleticgis.css" rel="stylesheet"/>
+	<link href="resources/css/athleticgis.css" rel="stylesheet" />
+
+	<!-- Bootstrap core CSS -->
+	<link href="resources/css/bootstrap.css" rel="stylesheet" />
+
+	<!-- Custom styles for this template -->
+	<link href="resources/css/signin.css" rel="stylesheet" />
+
+
 </h:head>
 <h:body>
-	<h:panelGrid columns="2" styleClass="header">
+	<div style="width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; padding-top: 15px; padding-left: 20px;" >
 		<h:outputLabel value="Athletic GIS" styleClass="logoFont"></h:outputLabel>
-		<h:outputLabel value="" styleClass="userFont"></h:outputLabel>
-	</h:panelGrid>
-	<h:panelGrid styleClass="loginPanel">
 		
-			
-			<h:form id="loginForm" prependId="false">
-				<h:panelGrid styleClass="panelGridCenter">
-					<h:panelGrid columns="2" styleClass="panelGridLeft">
-						<h:outputLabel value="Username: " for="j_username" />
-						<h:inputText id="j_username" required="true"
-							value="#{userInfoBean.name}" />
-
-						<h:outputLabel value="Password: " for="j_password" />
-						<h:inputSecret id="j_password" required="true" />
-					</h:panelGrid>
-
-					<h:panelGrid styleClass="panelGridCenter" columns="1">
-						<h:outputLabel for="_spring_security_remember_me">
-							<h:selectBooleanCheckbox id="_spring_security_remember_me"
-								value="#{userInfoBean.rememberMe}" /> Remember Me
-							</h:outputLabel>
-						<br />
-						<h:commandButton value="Sign In" id="login" type="submit"
-							action="#{loginBean.doLogin}"></h:commandButton>
-					</h:panelGrid>
-				</h:panelGrid>
-			</h:form>
-	
-	</h:panelGrid>
-	<div id="footer" class="footer">
-		<h:outputLabel value="&copy; 2013 Athletic GIS" />
 	</div>
+
+	<div class="container">
+		<h:form id="loginForm" prependId="false" styleClass="form-signin">
+
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<h:outputLabel value="Username" for="j_username"></h:outputLabel>
+			<h:inputText id="j_username" required="true" placeholder="username"
+				value="#{userInfoBean.name}" styleClass="form-control" />
+			<h:outputLabel value="Password" for="j_password"></h:outputLabel>
+			<h:inputSecret id="j_password" required="true"
+				styleClass="form-control" />
+
+			<h:outputLabel for="_spring_security_remember_me"
+				styleClass="checkbox">
+				<h:selectBooleanCheckbox id="_spring_security_remember_me"
+					value="#{userInfoBean.rememberMe}" /> Remember Me
+							</h:outputLabel>
+			<h:commandButton value="Sign In" id="login"  style="width : 210px;"
+				
+				action="#{loginBean.doLogin}"></h:commandButton>
+
+		</h:form>
+	</div>
+	<!-- /container -->
+	
+	<div style="height:23px; width:100%; background-color:#b0e0e6; padding-top: 5px; padding-left: 20px;"  >
+		<h:outputLabel value="&#169; 2013 Athletic GIS" styleClass="userFont" ></h:outputLabel>
+	</div>
+
+
 </h:body>
 </html>
