@@ -4,8 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:rich="http://richfaces.org/rich"
-	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
@@ -16,13 +14,33 @@
 
 </h:head>
 <ui:composition template="/template/layout.xhtml">
+	<ui:define name="scripts">
+		<h:head>
+			<link href="resources/css/athleticgis.css" rel="stylesheet" />
+
+			<style type="text/css">
+body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	background-color: #ffffff;
+}
+</style>
+		
+			<!-- Custom styles for this template -->
+			<link href="resources/css/signin.css" rel="stylesheet" />
+		</h:head>
+	</ui:define>
+
 	<ui:define name="content">
 
 
 
 
 		<h:form>
-			<h:panelGrid styleClass="panelGridCenter" width="100%" style="padding-bottom:50px; ">
+			<h:panelGrid styleClass="panelGridCenter" width="100%" style="padding-bottom:50px;">
 				<h:panelGrid border="0" columns="2" width="100%"
 					style="width : 100%; height : 33px; background-color: #D3D3D3"
 					columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">

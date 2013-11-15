@@ -28,6 +28,11 @@
 	/*width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
 }
 
+.content {
+	height:500px;
+	width:100%;
+}
+
 .footer {
 	height:23px;
 	width:100%;
@@ -50,7 +55,7 @@
 .uploadForm {
 	margin-left:auto;
 	margin-right:auto;
-	width:40%;
+	width:50%;
 }
 
 .activitiesTable {
