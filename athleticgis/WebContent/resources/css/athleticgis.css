@@ -1,20 +1,29 @@
 .logoFont {
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size:1.875em;
+	color:#FFFFFF;
 }
 
 .userFont {
 	font-family:"Lucida Console", Monaco, monospace;
-	font-size:1em;	
+	font-size:1em;
+	color:#FFFFFF;	
+}
+
+.footerFont {
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:1em;
+	color:#FFFFFF;	
 }
 
 .header {
 	height:67px;
 	width:100%;
-	background-color:#b0e0e6;
+	/*background-color:#b0e0e6;*/
+	background-color: #303030; 
 	
-	border-top-left-radius:2em;
-	border-top-right-radius:2em;
+	/*border-top-left-radius:2em;
+	border-top-right-radius:2em;*/
 	
 	/*width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
 }
@@ -22,9 +31,9 @@
 .footer {
 	height:23px;
 	width:100%;
-	background-color:#b0e0e6;
-	border-bottom-right-radius:2em;
-	border-bottom-left-radius:2em;
+	background-color:#303030;
+	/*border-bottom-right-radius:2em;
+	border-bottom-left-radius:2em;*/
 }
 
 .loginPanel {
