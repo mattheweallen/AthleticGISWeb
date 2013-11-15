@@ -9,11 +9,11 @@
 }
 
 .header {
-	/*height:67px;
+	height:67px;
 	width:100%;
-	background-color:#b0e0e6;*/
+	background-color:#b0e0e6;
 	
-	width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
+	/*width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
 }
 
 .footer {
@@ -62,19 +62,19 @@
 
 .richPanelHeaderCol1 {
 	padding-left: 50px;
-	padding-top: 20px;
+	
 	width: 50%;
 	text-align: left;
-	padding-bottom:20px;
+	
 }
 
 .richPanelHeaderCol2 {
 	
 	padding-right: 50px;
-	padding-top: 20px;
+	
 	width: 50%;
 	text-align: right;
-	padding-bottom:20px;
+	
 }
 
 .headerCol1 {
