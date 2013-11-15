@@ -9,9 +9,11 @@
 }
 
 .header {
-	height:67px;
+	/*height:67px;
 	width:100%;
-	background-color:#b0e0e6;
+	background-color:#b0e0e6;*/
+	
+	width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
 }
 
 .footer {
@@ -59,25 +61,34 @@
 }
 
 .richPanelHeaderCol1 {
-	margin: 0 auto;
+	padding-left: 50px;
+	padding-top: 20px;
 	width: 50%;
 	text-align: left;
+	padding-bottom:20px;
 }
 
 .richPanelHeaderCol2 {
-	margin: 0 auto;
+	
+	padding-right: 50px;
+	padding-top: 20px;
 	width: 50%;
-	text-align: center;
+	text-align: right;
+	padding-bottom:20px;
 }
 
 .headerCol1 {
-	margin: 0 auto;
+	
+	padding-left: 20px;
+	padding-top: 20px;
 	width: 50%;
 	text-align: left;
 }
 
 .headerCol2 {
-	margin: 0 auto;
+	padding-right: 50px;
+	padding-top: 20px;
+	
 	width: 50%;
 	text-align: right;
 }
@@ -99,4 +110,27 @@
      margin: 0 auto; 
      padding: 10px; 
      border: 1px solid #000;
+}
+
+.order-table{   
+	border-collapse:collapse;
+}
+ 
+.order-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+ 
+.order-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+ 
+.order-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
 }

@@ -10,61 +10,80 @@
 
 <h:head>
 	<title>Dashboard</title>
+	<h:outputStylesheet name="athleticgis.css" library="css" />
+	<h:outputStylesheet name="bootstrap.css" library="css" />
+	
+	
 </h:head>
+<h:body>
+	<!--  <h:panelGroup style="width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; padding-top: 15px; padding-left: 20px;"  >-->
+		<h:panelGrid columns="2" width="100%" style="background-color:#b0e0e6; height : 33px;"
+			columnClasses="headerCol1,headerCol2">
+			<h:outputLabel value="Athletic GIS" styleClass="logoFont"></h:outputLabel>
+			<h:outputLabel value="Welcome #{userInfoBean.name}"
+				styleClass="userFont"></h:outputLabel>
+		</h:panelGrid>
+	
 
-<ui:composition template="/template/layout.xhtml">
-	<ui:define name="content">
-		<h:form>
-			<rich:panel>
-				<f:facet name="header">
-					<h:panelGrid border="0" columns="2" width="100%" columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">
-						<h:outputText value="Activities" />
-						<h:commandButton action="upload" value="Upload Activity"></h:commandButton>
-					</h:panelGrid>
-				</f:facet>
-				<rich:dataTable value="#{dashboardBean.activities}" var="activity"
-					rows="0" styleClass="activitiesTable">
-					
+	
+	
+	<h:form>
+		<div style="width: 100%;">
+		<h:panelGrid border="0" columns="2" width="100%" style="width : 100%; height : 70px;"
+			columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">
+			<h:outputText value="Activities" />
+			<h:commandButton action="upload" value="Upload Activity"></h:commandButton>
+		</h:panelGrid>
+		</div>
 
-					<f:facet name="header">
-						<h:outputText value="Activity Table" />
-					</f:facet>
+		<h:dataTable value="#{dashboardBean.activities}" var="activity"
+			rows="0" styleClass="order-table activitiesTable"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
 
-					<rich:column width="20%" rendered="#{request.isUserInRole('ROLE_ADMIN')}">
-						<f:facet name="header">User Name</f:facet>
-						<h:outputText value="#{activity.userName}" />
-						<f:facet name="footer">User Name</f:facet>
-					</rich:column>
 
-					<rich:column width="40%">
-						<f:facet name="header">Name</f:facet>
-							<h:link outcome="activity" value="#{activity.name}">
-								<f:param name="activityId" value="#{activity.activityId}" />
-							</h:link>
-						<f:facet name="footer">Name</f:facet>
-					</rich:column>
+			
 
-					<rich:column width="20%">
-						<f:facet name="header">Date</f:facet>
-						<h:outputText value="#{activity.date}" />
-						<f:facet name="footer">Date</f:facet>
-					</rich:column>
-					
-					<rich:column width="20%">
-						<f:facet name="header">Delete</f:facet>
-							<h:commandLink value="Delete">
-								<f:param name="activityId" value="#{activity.activityId}" />
-							</h:commandLink>
-						<f:facet name="footer">Delete</f:facet>
-					</rich:column>
+			<h:column 
+				rendered="#{request.isUserInRole('ROLE_ADMIN')}">
+				<f:facet name="header">User Name</f:facet>
+				<h:outputText value="#{activity.userName}" />
+			
+			</h:column>
 
-					<f:facet name="footer">
-						<h:outputText value="Activity Table" />
-					</f:facet>
-				</rich:dataTable>
-			</rich:panel>
+			<h:column >
+				<f:facet name="header">Name</f:facet>
+				<h:link outcome="activity" value="#{activity.name}">
+					<f:param name="activityId" value="#{activity.activityId}" />
+				</h:link>
+				
+			</h:column>
 
-		</h:form>
-	</ui:define>
-</ui:composition>
+			<h:column >
+				<f:facet name="header">Date</f:facet>
+				<h:outputText value="#{activity.date}" />
+				
+			</h:column>
+
+			<h:column >
+				<f:facet name="header">Delete</f:facet>
+				<h:commandLink value="Delete">
+					<f:param name="activityId" value="#{activity.activityId}" />
+				</h:commandLink>
+				
+			</h:column>
+
+			
+		</h:dataTable>
+
+
+	</h:form>
+	
+
+	<div
+		style="height: 23px; width: 100%; background-color: #b0e0e6; padding-top: 5px; padding-left: 20px;">
+		<h:outputLabel value="&#169; 2013 Athletic GIS" styleClass="userFont"></h:outputLabel>
+	</div>
+
+</h:body>
 </html>
