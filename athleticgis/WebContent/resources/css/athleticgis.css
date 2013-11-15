@@ -13,6 +13,9 @@
 	width:100%;
 	background-color:#b0e0e6;
 	
+	border-top-left-radius:2em;
+	border-top-right-radius:2em;
+	
 	/*width : 100%; background-color:#b0e0e6; height : 33px; position:absolute; top:0; /*padding-top: 15px; padding-left: 20px;*/
 }
 
@@ -20,6 +23,8 @@
 	height:23px;
 	width:100%;
 	background-color:#b0e0e6;
+	border-bottom-right-radius:2em;
+	border-bottom-left-radius:2em;
 }
 
 .loginPanel {
@@ -93,6 +98,13 @@
 	text-align: right;
 }
 
+.footerCol {
+	padding-left: 20px;
+	
+	width: 100%;
+	text-align: left;
+}
+
 .loginButton {
 	width: 100px;
 }
@@ -114,6 +126,7 @@
 
 .order-table{   
 	border-collapse:collapse;
+	
 }
  
 .order-table-header{
