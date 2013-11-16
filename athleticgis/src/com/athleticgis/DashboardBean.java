@@ -5,6 +5,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import com.athleticgis.model.Activity;
+import com.athleticgis.model.ActivityModel;
 
 import java.io.File;
 import java.io.Serializable;
@@ -20,10 +21,24 @@ import org.richfaces.model.UploadedFile;
 @SessionScoped
 public class DashboardBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private List<Activity> activities;
 	
 	@ManagedProperty(value = "#{userInfoBean}")
     private UserInfoBean userInfoBean;
+	
+	@ManagedProperty(value = "#{activityModel}")
+    private ActivityModel activityModel;
+	
+	public ActivityModel getActivityModel() {
+		return activityModel;
+	}
+
+	public void setActivityModel(ActivityModel activityModel) {
+		this.activityModel = activityModel;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		activityModel.setActivities(activities);
+	}
 	
 	public UserInfoBean getUserInfoBean() {
 		return userInfoBean;
@@ -34,26 +49,9 @@ public class DashboardBean implements Serializable {
 	}
 
 	public List<Activity> getActivities() {
-		//hard coded
-		activities = new ArrayList<Activity>();
-		
-		if(userInfoBean.getAdmin()) {
-			Activity a = new Activity();
-			a.setDate(new Timestamp((new Date()).getTime()));
-			a.setName("Tuesday Night World Championships");
-			a.setUserName("admin");
-			a.setActivityId(1L);
-			activities.add(a);
-		}
-		
-		Activity a1 = new Activity();
-		a1.setDate(new Timestamp((new Date()).getTime()));
-		a1.setName("Run Around The Park");
-		a1.setUserName("cs402@uwlax.uwl");
-		a1.setActivityId(2L);
-		activities.add(a1);
-		return activities;
+		return activityModel.getActivities();
 	}
+	
 	
 //	public void fileUploadListener(FileUploadEvent event) throws Exception {
 //		UploadedFile item = event.getUploadedFile();

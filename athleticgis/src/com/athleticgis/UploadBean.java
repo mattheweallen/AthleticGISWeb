@@ -2,12 +2,15 @@ package com.athleticgis;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
@@ -16,19 +19,70 @@ import javax.faces.validator.ValidatorException;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import com.athleticgis.model.Activity;
+import com.athleticgis.model.ActivityModel;
+
 @ManagedBean
 @SessionScoped
 public class UploadBean implements Serializable {
 	private static final long serialVersionUID = -290191374294978569L;
 	private Part file;
 	private String fileContent;
+	private String activityName;
+	@ManagedProperty(value = "#{userInfoBean}")
+    private UserInfoBean userInfoBean;
+	@ManagedProperty(value = "#{activityModel}")
+    private ActivityModel activityModel;
 	
-	public void upload() {
+	public ActivityModel getActivityModel() {
+		return activityModel;
+	}
+
+	public void setActivityModel(ActivityModel activityModel) {
+		this.activityModel = activityModel;
+	}
+
+	public UserInfoBean getUserInfoBean() {
+		return userInfoBean;
+	}
+
+	public void setUserInfoBean(UserInfoBean userInfoBean) {
+		this.userInfoBean = userInfoBean;
+	}
+
+	public String getActivityName() {
+		return activityName;
+	}
+
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
+	}
+
+	public String upload() {
+		
+		
+		return null;
+	}
+	
+	public String save() {
+		
+		if(file != null && file.getSize() > 0 && activityName != null) {
 		try {
 			setFileContent(new Scanner(file.getInputStream())
 					.useDelimiter("\\A").next());
 		} catch (IOException e) {
 			// Error handling
+		}
+		
+		
+			Activity a = new Activity();
+			a.setDate(new Timestamp(new Date().getTime()));
+			a.setName(activityName);
+			a.setUserName(userInfoBean.getName());
+			activityModel.addActivity(a);
+			return "dashboard?faces-redirect=true";
+		} else {
+			return null;
 		}
 	}
 

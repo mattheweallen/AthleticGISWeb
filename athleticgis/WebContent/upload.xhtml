@@ -43,21 +43,24 @@ body {
 					columnClasses="richPanelHeaderCol1,richPanelHeaderCol2">
 					<h:outputText value="Upload" />
 					<h:commandButton value="Return to Dashboard"
-						action="dashboard?faces-redirect=true"></h:commandButton>
+						action="dashboard?faces-redirect=true" immediate="true"></h:commandButton>
 				</h:panelGrid>
 
 				<h:panelGrid styleClass="uploadForm panelGridCenter">
 					<!-- Put Input Text for Title of Activity -->
-					<h:panelGrid columns="3">
-						<h:inputText value="#{activityBean.activityName}" size="40"></h:inputText>
-						<h:inputFile id="file" value="#{uploadBean.file}"
-							validator="#{uploadBean.validateFile}" />
-						<h:commandButton value="Upload"
-							actionListener="#{uploadBean.upload}">
+					<h:panelGrid columns="2" style="text-align : left;">
+						
+						<h:outputLabel value="1) Enter Activity Name: "></h:outputLabel>
+						<h:inputText value="#{uploadBean.activityName}" size="40" required="true" requiredMessage="Name of Activity is Required."></h:inputText>
+						<h:outputLabel value="2) Select File valid .GPX file To Upload: "></h:outputLabel>
+						<h:inputFile id="file" value="#{uploadBean.file}" validator="#{uploadBean.validateFile}" />
+						<h:outputLabel value="3) Click to save activity: "></h:outputLabel>
+						<h:commandButton value="Save"
+							action="#{uploadBean.save}">
 						</h:commandButton>
 					</h:panelGrid>
-					<h:inputTextarea rows="20" cols="100"
-						value="#{uploadBean.fileContent}" readonly="true" />
+					<!--  <h:inputTextarea rows="20" cols="150"
+						value="#{uploadBean.fileContent}" readonly="true" /> -->
 				</h:panelGrid>
 			</h:panelGrid>
 

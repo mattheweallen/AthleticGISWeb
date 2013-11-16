@@ -7,15 +7,49 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
+
+import com.athleticgis.model.ActivityModel;
 
 @ManagedBean
 @RequestScoped
 public class ActivityBean implements Serializable {
 	private static final long serialVersionUID = -4430301657324644250L;
 	String activityName;
-	@ManagedProperty(value = "#{param.activityId}")
+	@ManagedProperty(value = "#{request.getParameter('activityId')}")
     private String activityId;
+	
+	@ManagedProperty(value = "#{activityModel}")
+    private ActivityModel activityModel;
+	
+	private HtmlInputText inputTextActivityName;
+	
+//	@ManagedProperty(value = "#{dashboardBean.getActivities()}")
+//    private String activityId;
+	
+//	@ManagedProperty(value = "#{userInfoBean}")
+//    private UserInfoBean userInfoBean;
+
+	public HtmlInputText getInputTextActivityName() {
+		return inputTextActivityName;
+	}
+
+	public void setInputTextActivityName(HtmlInputText inputTextActivityName) {
+		
+		if(activityId != null) {
+			inputTextActivityName.setValue(activityModel.findActivity(Long.parseLong(activityId)).getName());
+		}
+		this.inputTextActivityName = inputTextActivityName;
+	}
+
+	public ActivityModel getActivityModel() {
+		return activityModel;
+	}
+
+	public void setActivityModel(ActivityModel activityModel) {
+		this.activityModel = activityModel;
+	}
 
 	public String getActivityId() {
 		return activityId;
@@ -37,16 +71,43 @@ public class ActivityBean implements Serializable {
 
 	public String getActivityName() {
 
-		Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		//Map<String, String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		//String activityId = params.get("activityId");
 		//System.out.println(activityId);
-		return "Tuesday Night World Championships";
-
+		//return "Tuesday Night World Championships";
+		return activityName;
 	}
 	
 	public void setActivityName(String activityName) {
 
 		this.activityName = activityName;
 
+	}
+	
+	public String updateActivity() {
+		Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		String aId = params.get("activityId");
+		Long id = Long.parseLong(aId);
+		
+		activityModel.findActivity(id).setName(inputTextActivityName.getValue().toString());
+		return null;
+	}
+	
+	public String removeActivity() {
+		
+		Map<String,String> params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+		String aId = params.get("activityId");
+		Long id = Long.parseLong(aId);
+		
+		int ndx = -1;
+		for(int i = 0; i < activityModel.getActivities().size(); i++) {
+			if(id.equals(activityModel.getActivities().get(i).getActivityId())) {
+				ndx = i;
+			}
+		}
+		activityModel.getActivities().remove(ndx);
+		
+		
+		return "dashboard?faces-redirect=true";
 	}
 }
