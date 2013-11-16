@@ -31,9 +31,7 @@
 				  var map = new google.maps.Map(document.getElementById('map-canvas'),
 				      mapOptions);
 				
-				  var activityCoordinates = [
-				    #{activityBean.coordinates}
-				  ];
+				  var activityCoordinates = [#{activityBean.coordinates}];
 				  var activity = new google.maps.Polyline({
 				    path: activityCoordinates,
 				    geodesic: true,
