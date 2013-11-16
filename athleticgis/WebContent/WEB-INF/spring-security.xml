@@ -25,7 +25,7 @@
 		<form-login login-processing-url="/j_spring_security_check"
 			login-page="/login.xhtml" default-target-url="/dashboard.xhtml"
 			authentication-failure-url="/login.xhtml?error=t" />
-		<!-- <logout logout-url="/logout" logout-success-url="/" />  -->
+		<logout logout-url="/logout" logout-success-url="/" /> 
 		
 		<remember-me key="myAppKey"/>
 	</http>

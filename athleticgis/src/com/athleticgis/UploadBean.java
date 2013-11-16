@@ -80,6 +80,8 @@ public class UploadBean implements Serializable {
 			a.setName(activityName);
 			a.setUserName(userInfoBean.getName());
 			activityModel.addActivity(a);
+			activityName = null;
+			
 			return "dashboard?faces-redirect=true";
 		} else {
 			return null;

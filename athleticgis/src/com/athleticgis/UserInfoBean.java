@@ -49,4 +49,8 @@ public class UserInfoBean implements Serializable {
 	public void setRememberMe(Boolean rememberMe) {
 		this.rememberMe = rememberMe;
 	}
+	
+	public Boolean getLoggedIn() {
+		return name != null;
+	}
 }
