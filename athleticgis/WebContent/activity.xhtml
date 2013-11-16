@@ -15,9 +15,6 @@
 #map-canvas {
 	height: 300px
 }
-
-
-
 </style>
 			<script type="text/javascript"
 				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApDXRNzq6eGqWKUbufj3MzhJ4P0RF0Ghw&amp;sensor=false">
@@ -51,26 +48,13 @@
 
 
 
-			<link href="resources/css/athleticgis.css" rel="stylesheet" />
-<style type="text/css">
-			body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333333;
-  background-color: #ffffff;
-  
- 
-}
-
-
-</style>
+			
+			  <link href="resources/css/bootstrap.css" rel="stylesheet" />
 
 			<!-- Custom styles for this template -->
 			<link href="resources/css/signin.css" rel="stylesheet" />
 
-
+			<link href="resources/css/athleticgis.css" rel="stylesheet" />
 
 		</h:head>
 	</ui:define>
@@ -91,15 +75,21 @@
 
 				<h:panelGrid styleClass="panelGridCenter">
 					<h:panelGrid columns="3" styleClass="panelGridCenter" width="50%">
-						<h:inputText binding="#{activityBean.inputTextActivityName}" size="40"></h:inputText>
-						<h:commandButton value="Update" style="vertical-align : top;" action="#{activityBean.updateActivity}">
-							<f:param name="activityId" value="#{request.getParameter('activityId')}" />
+						<h:inputText binding="#{activityBean.inputTextActivityName}" style="width : 400px"
+							size="40"></h:inputText>
+							
+						<h:commandButton value="Update" 
+							action="#{activityBean.updateActivity}">
+							<f:param name="activityId"
+								value="#{request.getParameter('activityId')}" />
 						</h:commandButton>
-						<h:commandButton value="Delete" action="#{activityBean.removeActivity}">
-							<f:param name="activityId" value="#{request.getParameter('activityId')}" />
+						<h:commandButton value="Delete"
+							action="#{activityBean.removeActivity}">
+							<f:param name="activityId"
+								value="#{request.getParameter('activityId')}" />
 						</h:commandButton>
 					</h:panelGrid>
-					
+
 				</h:panelGrid>
 
 				<div id="map-canvas" />

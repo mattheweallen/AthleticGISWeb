@@ -161,3 +161,21 @@
 	background:none repeat scroll 0 0 #F9F9F9;
 	border-top:1px solid #BBBBBB;
 }
+
+input[type=text] {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:5px 15px; padding-bottom: 0px; padding-top: 0px; margin-top : 0;  background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
+
+input[type=file] {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+width : 400px;
+
+}

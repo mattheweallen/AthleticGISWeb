@@ -15,16 +15,7 @@
 		<h:head>
 			<link href="resources/css/athleticgis.css" rel="stylesheet" />
 
-			<style type="text/css">
-body {
-	margin: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 20px;
-	color: #333333;
-	background-color: #ffffff;
-}
-</style>
+			<link href="resources/css/bootstrap.css" rel="stylesheet" />
 
 
 
@@ -51,7 +42,7 @@ body {
 					<h:panelGrid columns="2" style="text-align : left;">
 						
 						<h:outputLabel value="1) Enter Activity Name: "></h:outputLabel>
-						<h:inputText value="#{uploadBean.activityName}" size="40" required="true" requiredMessage="Name of Activity is Required."></h:inputText>
+						<h:inputText value="#{uploadBean.activityName}" size="40" required="true" requiredMessage="Name of Activity is Required." style="width : 400px;"></h:inputText>
 						<h:outputLabel value="2) Select File valid .GPX file To Upload: "></h:outputLabel>
 						<h:inputFile id="file" value="#{uploadBean.file}" validator="#{uploadBean.validateFile}" />
 						<h:outputLabel value="3) Click to save activity: "></h:outputLabel>
